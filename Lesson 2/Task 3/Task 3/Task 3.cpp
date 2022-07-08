@@ -11,29 +11,25 @@ struct address {
     int index;
 };
 
-void ADDRESS(address* address_array, int x) {
-    std::cout << "Город: " << address_array[x].city << std::endl;
-    std::cout << "Улица: " << address_array[x].street << std::endl;
-    std::cout << "Номер дома: " << address_array[x].house << std::endl;
-    std::cout << "Номер квартиры: " << address_array[x].flat << std::endl;
-    std::cout << "Индекс: " << address_array[x].index << std::endl << std::endl;
-
+void ADDRESS(address x) {
+    std::cout << "Город: " << x.city << std::endl;
+    std::cout << "Улица: " << x.street << std::endl;
+    std::cout << "Номер дома: " << x.house << std::endl;
+    std::cout << "Номер квартиры: " << x.flat << std::endl;
+    std::cout << "Индекс: " << x.index << std::endl << std::endl;
 }
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    address* address_array = new address[5];
-    address_array[0] = { "Москва", "Арбат", 12, 8, 123456 };
-    address_array[1] = { "Ижевск", "Пушкина", 59, 43, 953769 };
-    address_array[2]  = { "Йошкар-Ола", "Гагарина", 1, 13, 424303 };
-    address_array[3] = { "Чебоксары", "Комсомольская", 12, 28, 345456 };
-    ADDRESS(address_array, 0);
-    ADDRESS(address_array, 1);
-    ADDRESS(address_array, 2);
-    ADDRESS(address_array, 3);
-    delete[] address_array;
-    address_array = nullptr;
+    address a = { "Москва", "Арбат", 12, 8, 123456 };
+    address b = { "Ижевск", "Пушкина", 59, 43, 953769 };
+    address c = { "Йошкар-Ола", "Гагарина", 1, 13, 424303 };
+    address d = { "Чебоксары", "Комсомольская", 12, 28, 345456 };
+    ADDRESS(a);
+    ADDRESS(b);
+    ADDRESS(c);
+    ADDRESS(d);
     return 0;
 }
 

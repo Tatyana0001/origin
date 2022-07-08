@@ -4,24 +4,24 @@
 #include <iostream>
 
 enum months {
-    Январь = 1,
-    Февраль,
-    Март,
-    Апрель,
-    Май,
-    Июнь,
-    Июль,
-    Август,
-    Сентябрь,
-    Октябрь,
-    Ноябрь,
-    Декабрь
+    January = 1,
+    February,
+    March,
+    April,
+    May,
+    June,
+    July,
+    August,
+    September,
+    October,
+    November,
+    December
 };
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    months month = Январь;
+    months month = months::January;
     int m = month;
    
     do {
@@ -31,40 +31,40 @@ int main()
         case 0:
             std::cout << "До свидания";
             break;
-        case(Январь):
+        case months::January:
             std::cout << "Январь";
             break;
-        case(Февраль):
+        case months::February:
             std::cout << "Февраль";
             break;
-        case(Март):
+        case months::March:
             std::cout << "Март";
             break;
-        case(Апрель):
+        case months::April:
             std::cout << "Апрель";
             break;
-        case(Май):
+        case months::May:
             std::cout << "Май";
             break;
-        case(Июнь):
+        case months::June:
             std::cout << "Июнь";
             break;
-        case(Июль):
+        case months::July:
             std::cout << "Июль";
             break;
-        case(Август):
+        case months::August:
             std::cout << "Август";
             break;
-        case(Сентябрь):
+        case months::September:
             std::cout << "Сентябрь";
             break;
-        case(Октябрь):
+        case months::October:
             std::cout << "Октябрь";
             break;
-        case(Ноябрь):
+        case months::November:
             std::cout << "Ноябрь";
             break;
-        case(Декабрь):
+        case months::December:
             std::cout << "Декабрь";
             break;
         default:
