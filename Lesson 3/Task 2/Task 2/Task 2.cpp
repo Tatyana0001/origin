@@ -19,7 +19,7 @@ public:
     Counter() {
         Counter::count = 1;
     }
-    Counter(int& numb) {
+    Counter(int numb) {
         this->count = numb;
     }
 };

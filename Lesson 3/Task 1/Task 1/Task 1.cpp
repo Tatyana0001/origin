@@ -5,9 +5,10 @@
 
 class Calculator
 {
-public:
+private:
     double num1, num2;
     double a;
+public:
     double add(double num1, double num2) {
        a = num1 + num2;
        return a;
@@ -35,16 +36,15 @@ public:
     bool set_num1(double num1) {
         this->num1 = num1;
         if (num1 == 0) {
-            std::cout << "Неверный ввод! " << std::endl;
             return false;
         }
         else return true;
     }
     bool set_num2(double num2) {
-        this->num1 = num1;
+        this->num2 = num2;
         if (num2 == 0) { 
-            std::cout << "Неверный ввод! " << std::endl;
-            return false; }
+            return false; 
+        }
         else return true;
     }
 };
@@ -58,10 +58,16 @@ int main()
         do {
             std::cout << "Введите num1: ";
             std::cin >> num1;
-        } while (!calculator.set_num1(num1));
+            if (!calculator.set_num1(num1)) {
+                std::cout << "Неверный ввод! " << std::endl;
+            }
+        } while (!calculator.set_num1(num1)); 
         do {
             std::cout << "Введите num2: ";
             std::cin >> num2;
+            if (!calculator.set_num2(num2)) {
+                std::cout << "Неверный ввод! " << std::endl;
+            }
         } while (!calculator.set_num2(num2));
         std::cout << "num1 + num2 = " << calculator.add(num1, num2) << std::endl;
         std::cout << "num1 - num2 = " << calculator.subtract_1_2(num1, num2) << std::endl;
