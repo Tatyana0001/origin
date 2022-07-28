@@ -54,14 +54,16 @@ int main()
             if (!calculator.set_num1(num1)) {
                 std::cout << "Неверный ввод! " << std::endl;
             }
-        } while (!calculator.set_num1(num1)); 
+            else break;
+        } while (true);
         do {
             std::cout << "Введите num2: ";
             std::cin >> num2;
             if (!calculator.set_num2(num2)) {
                 std::cout << "Неверный ввод! " << std::endl;
             }
-        } while (!calculator.set_num2(num2));
+            else break;
+        } while (true);
         std::cout << "num1 + num2 = " << calculator.add(num1, num2) << std::endl;
         std::cout << "num1 - num2 = " << calculator.subtract_1_2(num1, num2) << std::endl;
         std::cout << "num2 - num1 = " << calculator.subtract_2_1(num1, num2) << std::endl;
