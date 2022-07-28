@@ -6,7 +6,8 @@
 #include <string>
 
 class Address
-{private:
+{
+private:
     int house, flat;
     std::string city, street;
 public:
@@ -30,7 +31,7 @@ public:
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    int N, house,flat;
+    int N, house, flat;
     std::string city, street;
     std::ifstream fin("in.txt");
     fin >> N;
