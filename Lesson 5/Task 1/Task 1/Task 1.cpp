@@ -8,9 +8,11 @@ class Figure {
 private:
     int num = 0;
 public:
-    virtual std::string side() {
-        std::cout << "Фигура: ";
-        return std::to_string(num);
+    virtual std::string name() {
+        return "Фигура: ";
+    }
+    virtual int side() {
+        return num;
     };
 };
 
@@ -18,22 +20,27 @@ class Triangle : public Figure {
 private:
     const int num = 3;
 public:
-    std::string side() override {
-        std::cout << "Треугольник: ";
-        return std::to_string(num);
+    std::string name() override {
+        return "Треугольник: ";
+    }
+    int side() override {
+        return num;
     }
 };
 class Quadrilateral : public Figure {
 private:
     const int num = 4;
 public:
-    std::string side() override {
-        std::cout << "Четырехугольник: ";
-        return std::to_string(num);
+    std::string name() override {
+        return "Четырехугольник: ";
+    }
+    int side() override {
+        return num;
     }
 };
 
 void side_count(Figure* figure) {
+    std::cout << figure->name();
     std::cout << figure->side() << '\n';
 }
 

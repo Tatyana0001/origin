@@ -5,7 +5,19 @@
 #include <string>
 
 
-class Triangle { 
+class Figure {
+public:
+    Figure() {};
+    virtual std::string name() {
+        return "Фигура: ";
+    }
+    virtual std::string side() {
+        return "";
+    }
+    virtual std::string angle() { return ""; }
+};
+
+class Triangle : public Figure  { 
 private:
     int a = 10, b = 20, c = 30;
     int A = 50, B = 60, C = 70;
@@ -55,7 +67,7 @@ public:
         return "Равносторонний треугольник: ";
     }
 };
-class Quadrilateral {
+class Quadrilateral : public Figure {
 private:
     int a = 10, b = 20, c = 30, d = 40;
     int A = 50, B = 60, C = 70, D = 80;
@@ -116,16 +128,12 @@ public:
     }
 };
 
-void print_info(Triangle* triangle) {
-    std::cout << triangle->name() << '\n';
-    std::cout << triangle->side() << '\n';
-    std::cout << triangle->angle() << '\n' << '\n';
+void print_info (Figure* figure) {
+    std::cout << figure->name() << '\n';
+    std::cout << figure->side() << '\n';
+    std::cout << figure->angle() << '\n' << '\n';
 }
-void print_info(Quadrilateral* quadrilateral) {
-    std::cout << quadrilateral->name() << '\n';
-    std::cout << quadrilateral->side() << '\n';
-    std::cout << quadrilateral->angle() << '\n' << '\n';
-}
+
 
 int main()
 {

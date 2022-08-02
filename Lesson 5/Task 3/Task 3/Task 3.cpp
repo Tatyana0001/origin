@@ -12,22 +12,29 @@ public:
         this->num = num;
     }
     Figure() {};
-    std::string name() {
+    virtual std::string name() {
         return "Фигура: ";
     }
-    std::string accuracy() {
+    virtual bool check() {
         if (num == 0) {
-            return "Правильная";
+            return true;
         }
-        else return "Неправильная";
+        else return false;
     }
-    std::string side_num() {
-        std::cout << "Количество сторон: ";
-        return std::to_string(num);
+    virtual std::string side() {
+        return "";
+    }
+    virtual std::string angle() {
+        return "";
+    }
+    virtual void print() {
+        std::cout << name() << ":\n";
+        std::cout << (check() ? "Правильная" : "Неправильная") << "\n";
+        std::cout << "Количество сторон: " << num;
     }
 };
 
-class Triangle {
+class Triangle : public Figure{
 private:
     int a = 10, b = 20, c = 30;
     int A = 50, B = 60, C = 70;
@@ -46,23 +53,18 @@ public:
     virtual std::string name() {
         return "Треугольник: ";
     }
-    std::string accuracy() {
+    bool check() override {
         if ((A + B + C == 180) && (num == 3)) {
-            return "Правильная";
+            return true;
         }
-        else return "Неправильная";
+        else return false;
     }
-    std::string side_num() {
-        std::cout << "Количество сторон: ";
-        return std::to_string(num);
-    }
-    std::string side() {
-        std::cout << "Стороны: ";
-        return "a=" + std::to_string(a) + " b=" + std::to_string(b) + " c=" + std::to_string(c);
-    }
-    std::string angle() {
-        std::cout << "Углы: ";
-        return "A=" + std::to_string(A) + " B=" + std::to_string(B) + " C=" + std::to_string(C);
+    void print() override{
+        std::cout << name() << ":\n";
+        std::cout << (check() ? "Правильная" : "Неправильная") << "\n";
+        std::cout << "Количество сторон: " << num << "\n";
+        std::cout << "Стороны: a = " << a << " b = " << b << " c = " << c << "\n";
+        std::cout << "Углы: A = " << A << " B = " << B << " C = " << C;
     }
 };
 
@@ -76,13 +78,6 @@ public:
     std::string name() override {
         return "Прямоугольный треугольник: ";
     }
-    std::string accuracy() {
-        Triangle::accuracy();
-        if (C = 90) {
-            return "Правильная";
-        }
-        else return "Неправильная";
-    }
 };
 
 class Isosceles_Triangle : public Triangle {
@@ -94,13 +89,6 @@ public:
     Isosceles_Triangle() :Triangle(10, 20, 10, 50, 60, 50, 3) {};
     std::string name() override {
         return "Равнобедренный треугольник: ";
-    }
-    std::string accuracy() {
-        Triangle::accuracy();
-        if ((a == c) && (A == C)) {
-            return "Правильная";
-        }
-        else return "Неправильная";
     }
 };
 
@@ -114,15 +102,8 @@ public:
     std::string name() override {
         return "Равносторонний треугольник: ";
     }
-    std::string accuracy() {
-        Triangle::accuracy();
-        if ((a == b) && (a == c) && (A == 60) && (B == 60) && (C == 60)) {
-            return "Правильная";
-        }
-        else return "Неправильная";
-    }
 };
-class Quadrilateral {
+class Quadrilateral : public Figure {
 private:
     int a = 10, b = 20, c = 30, d = 40;
     int A = 50, B = 60, C = 70, D = 80;
@@ -143,23 +124,18 @@ public:
     virtual std::string name() {
         return "Четырехугольник: ";
     }
-    std::string accuracy() {
+    bool check() {
         if ((A + B + C + D == 360) && (num == 4)) {
-            return "Правильная";
+            return true;
         }
-        else return "Неправильная";
+        else return false;
     }
-    std::string side_num() {
-        std::cout << "Количество сторон: ";
-        return std::to_string(num);
-    }
-    std::string side() {
-        std::cout << "Стороны: ";
-        return "a=" + std::to_string(a) + " b=" + std::to_string(b) + " c=" + std::to_string(c) + " d=" + std::to_string(d);
-    }
-    std::string angle() {
-        std::cout << "Углы: ";
-        return "A=" + std::to_string(A) + " B=" + std::to_string(B) + " C=" + std::to_string(C) + " D=" + std::to_string(D);
+    void print() override {
+        std::cout << name() << ":\n";
+        std::cout << (check() ? "Правильная" : "Неправильная") << "\n";
+        std::cout << "Количество сторон: " << num << "\n";
+        std::cout << "Стороны: a = " << a << " b = " << b << " c = " << c << " d = " << d << "\n";
+        std::cout << "Углы: A = " << A << " B = " << B << " C = " << C << " D = " << D;
     }
 };
 
@@ -173,13 +149,6 @@ public:
     std::string name() override {
         return "Прямоугольник: ";
     }
-    std::string accuracy() {
-        Quadrilateral::accuracy();
-        if ((a = c) && (b = d) && (A = 90) && (B = 90) && (C = 90) && (D = 90)) {
-            return "Правильная";
-        }
-        else return "Неправильная";
-    }
 };
 
 class Square : public Quadrilateral {
@@ -191,13 +160,6 @@ public:
     Square() : Quadrilateral(20, 20, 20, 20, 90, 90, 90, 90, 4) {};
     std::string name() override {
         return "Квадрат: ";
-    }
-    std::string accuracy() {
-        Quadrilateral::accuracy();
-        if ((a = b) && (a = c) && (a = d) && (A = 90) && (B = 90) && (C = 90) && (D = 90)) {
-            return "Правильная";
-        }
-        else return "Неправильная";
     }
 };
 
@@ -211,13 +173,6 @@ public:
     std::string name() override {
         return "Параллелограмм: ";
     }
-    std::string accuracy() {
-        Quadrilateral::accuracy();
-        if ((a = c) && (b = d) && (A = C) && (B = D)) {
-            return "Правильная";
-        }
-        else return "Неправильная";
-    }
 };
 
 class Rhomb : public Quadrilateral {
@@ -230,32 +185,10 @@ public:
     std::string name() override {
         return "Ромб: ";
     }
-    std::string accuracy() {
-        Quadrilateral::accuracy();
-        if ((A = C) && (B = D)) {
-            return "Правильная";
-        }
-        else return "Неправильная";
-    }
 };
 void print_info(Figure* figure) {
-    std::cout << figure->name() << "\n";
-    std::cout << figure->accuracy() << '\n';
-    std::cout << figure->side_num() << '\n' << '\n';
-}
-void print_info(Triangle* triangle) {
-    std::cout << triangle->name() << '\n';
-    std::cout << triangle->accuracy() << "\n";
-    std::cout << triangle->side_num() << "\n";
-    std::cout << triangle->side() << '\n';
-    std::cout << triangle->angle() << '\n' << '\n';
-}
-void print_info(Quadrilateral* quadrilateral) {
-    std::cout << quadrilateral->name() << '\n';
-    std::cout << quadrilateral->accuracy() << "\n";
-    std::cout << quadrilateral->side_num() << "\n";
-    std::cout << quadrilateral->side() << '\n';
-    std::cout << quadrilateral->angle() << '\n' << '\n';
+    figure->print();
+    std:: cout << '\n' << '\n';
 }
 
 int main()
