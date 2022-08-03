@@ -8,34 +8,31 @@ class Figure {
 private:
     int num = 0;
 public:
+    Figure(int num) {
+        this->num = num;
+    }
+    Figure() {};
     virtual std::string name() {
         return "Фигура: ";
     }
-    virtual int side() {
+    int side() {
         return num;
     };
 };
 
 class Triangle : public Figure {
-private:
-    const int num = 3;
 public:
+    Triangle() : Figure(3){};
     std::string name() override {
         return "Треугольник: ";
     }
-    int side() override {
-        return num;
-    }
 };
+
 class Quadrilateral : public Figure {
-private:
-    const int num = 4;
 public:
+    Quadrilateral() : Figure(4) {};
     std::string name() override {
         return "Четырехугольник: ";
-    }
-    int side() override {
-        return num;
     }
 };
 

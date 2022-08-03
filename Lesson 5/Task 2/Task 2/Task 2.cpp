@@ -31,7 +31,7 @@ public:
         this->C = C;
     }
     Triangle() {};
-    virtual std::string name() {
+    std::string name() override {
         return "Треугольник: ";
     }
     std::string side() {
@@ -83,7 +83,7 @@ public:
         this->D = D;
     }
     Quadrilateral() {};
-    virtual std::string name() {
+    std::string name() override {
         return "Четырехугольник: ";
     }
     std::string side() {
