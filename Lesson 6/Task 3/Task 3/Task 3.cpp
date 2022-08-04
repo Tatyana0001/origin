@@ -22,6 +22,7 @@ void print_info(Figure* figure) {
 }
 
 
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
