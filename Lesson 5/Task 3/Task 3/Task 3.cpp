@@ -50,11 +50,11 @@ public:
         this->num = num;
     }
     Triangle() {};
-    virtual std::string name() {
+    std::string name() override {
         return "Треугольник: ";
     }
     bool check() override {
-        if ((A + B + C == 180) && (num == 3)) {
+        if (((A + B + C) == 180) && (num == 3)) {
             return true;
         }
         else return false;
@@ -142,11 +142,11 @@ public:
         this->num = num;
     }
     Quadrilateral() {};
-    virtual std::string name() {
+    std::string name() override {
         return "Четырехугольник: ";
     }
     bool check() {
-        if ((A + B + C + D == 360) && (num == 4)) {
+        if (((A + B + C + D) == 360) && (num == 4)) {
             return true;
         }
         else return false;
@@ -214,7 +214,7 @@ public:
         this->A = A;
         this->B = B;
         this->C = A;
-        this->D = D;
+        this->D = B;
     };
     std::string name() override {
         return "Параллелограмм: ";

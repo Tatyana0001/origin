@@ -25,6 +25,7 @@ void print_info(Figure* figure) {
 int main()
 {
     setlocale(LC_ALL, "Russian");
+    system("chcp 1251");
     Triangle triangle;
     Right_Triangle right_triangle;
     Isosceles_Triangle isosceles_triangle;

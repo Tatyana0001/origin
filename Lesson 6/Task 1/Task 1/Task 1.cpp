@@ -7,31 +7,43 @@
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    double num1, num2; 
-    int math;
+    double num1 = 0, num2 = 0;
+    int math = 0;
     std::cout << "Введите первое число: ";
     std::cin >> num1;
-    std::cout << "Введите второе число: ";
-    std::cin >> num2;
-    std::cout << "Выберите операцию (1 - сложение, 2 - вычитание, 3 - умножение, 4 - деление, 5 - возведение в степень): ";
-    std::cin >> math;
+    do {
+        std::cout << "Введите второе число: ";
+        std::cin >> num2;
+        if (num2 == 0) {
+            std::cout << "Неверный ввод!" << std::endl;
+        }
+        else break;
+    } while (true);
+    do {
+        std::cout << "Выберите операцию (1 - сложение, 2 - вычитание, 3 - умножение, 4 - деление, 5 - возведение в степень): ";
+        std::cin >> math;
+        if ((math < 1) || (math > 5)) {
+            std::cout << "Неверный ввод!" << std::endl;
+        }
+        else break;
+    } while (true);
     switch (math) {
-    case 1:
-        std::cout << num1 << " + " << num2 << " = " << add(num1, num2);
-        break;
-    case 2:
-        std::cout << num1 << " - " << num2 << " = " << subtract(num1, num2);
-        break;
-    case 3:
-        std::cout << num1 << " * " << num2 << " = " << multiply(num1, num2);
-        break;
-    case 4:
-        std::cout << num1 << " / " << num2 << " = " << divide(num1, num2);
-        break;
-    case 5:
-        std::cout << num1 << " в степени " << num2 << " = " << involution(num1, num2);
-        break;
-    }
+        case 1:
+            std::cout << num1 << " + " << num2 << " = " << add(num1, num2);
+            break;
+        case 2:
+            std::cout << num1 << " - " << num2 << " = " << subtract(num1, num2);
+            break;
+        case 3:
+            std::cout << num1 << " * " << num2 << " = " << multiply(num1, num2);
+            break;
+        case 4:
+            std::cout << num1 << " / " << num2 << " = " << divide(num1, num2);
+            break;
+        case 5:
+            std::cout << num1 << " в степени " << num2 << " = " << involution(num1, num2);
+            break;
+        }
     return 0;
 }
 
