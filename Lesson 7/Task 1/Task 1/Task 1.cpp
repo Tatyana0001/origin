@@ -4,9 +4,12 @@
 #include <iostream>
 #define MODE 1
 
+#if MODE == 1
 int add(int num1, int num2) {
     return num1 + num2;
 }
+#endif
+
 
 int main()
 {
@@ -14,10 +17,10 @@ int main()
 #ifndef MODE
 #error Константа не определена
 #endif
-    int num1 = 0, num2 = 0;
 #if MODE == 0 
     std::cout << "Работаю в режиме тренировки" << std::endl;
 #elif MODE == 1
+    int num1 = 0, num2 = 0;
     std::cout << "Работаю в боевом режиме" << std::endl;
     std::cout << "Введите число 1: ";
     std::cin >> num1;
