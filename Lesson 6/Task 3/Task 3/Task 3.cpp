@@ -8,7 +8,7 @@
 #include "Right_Triangle.h"
 #include "Isosceles_Triangle.h"
 #include "Equilateral_Triangle.h"
-#include "Quadrilateral.h"
+#include "Quadrilateral.h" 
 #include "Rectangle.h"
 #include "Square.h"
 #include "Parallelogram.h"
@@ -26,7 +26,6 @@ void print_info(Figure* figure) {
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    system("chcp 1251");
     Triangle triangle;
     Right_Triangle right_triangle;
     Isosceles_Triangle isosceles_triangle;
