@@ -1,0 +1,6 @@
+﻿  Task 2.cpp
+C:\Таня\C++\Lesson 9\Task 2\Task 2\Task 2.cpp(89,20): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Таня\C++\Lesson 9\Task 2\Task 2\Task 2.cpp(89,14): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Таня\C++\Lesson 9\Task 2\Task 2\Task 2.cpp(90,20): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Таня\C++\Lesson 9\Task 2\Task 2\Task 2.cpp(90,14): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  Task 2.vcxproj -> C:\Таня\C++\Lesson 9\Task 2\x64\Debug\Task 2.exe
