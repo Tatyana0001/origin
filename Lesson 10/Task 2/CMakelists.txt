@@ -1,0 +1,3 @@
+cmake_minimum_required(VERSION 3.20.0)
+project(CMake_Task2)
+add_executable(CMakeTask2 Main.cpp Figure.cpp Figure.h Triangle.cpp Triangle.h Right_Triangle.cpp Right_Triangle.h Isosceles_Triangle.cpp Isosceles_Triangle.h Equilateral_Triangle.cpp Equilateral_Triangle.h Quadrilateral.cpp Quadrilateral.h Rectangle.cpp Rectangle.h Square.cpp Square.h Parallelogram.cpp Parallelogram.h Rhomb.cpp Rhomb.h)

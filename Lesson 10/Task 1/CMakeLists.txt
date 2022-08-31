@@ -1,0 +1,3 @@
+cmake_minimum_required(VERSION 3.20.0)
+project(My_first_cmake_project)
+add_executable(My_first_cmake_program My_first_cmake_program.cpp)
