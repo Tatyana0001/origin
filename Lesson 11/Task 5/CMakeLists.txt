@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22.0)
+project (Figure_cmake)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_library(FigureDynamicLib SHARED Figure.cpp Figure.h Triangle.cpp Triangle.h Right_Triangle.cpp Right_Triangle.h Isosceles_Triangle.cpp Isosceles_Triangle.h Equilateral_Triangle.cpp Equilateral_Triangle.h Quadrilateral.cpp Quadrilateral.h Rectangle.cpp Rectangle.h Square.cpp Square.h Parallelogram.cpp Parallelogram.h Rhomb.cpp Rhomb.h)
+add_executable(FigureDLL Figure_DLL.cpp)
+target_link_libraries(FigureDLL FigureDynamicLib)
