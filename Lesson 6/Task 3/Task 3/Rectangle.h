@@ -1,7 +1,9 @@
 #pragma once
+#include <string>
 #include "Quadrilateral.h"
-class Rectangle : public Quadrilateral {
+
+class Rect : public Quadrilateral {
 public:
-    Rectangle();
-    std::string name() override;
+	Rect();
+	std::string name() override;
 };
